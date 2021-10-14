@@ -74,7 +74,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | ---------------------- | ------------------------------------------------------------------------------ | -------------------- |
 | `image.registry`       | NATS image registry                                                            | `docker.io`          |
 | `image.repository`     | NATS image repository                                                          | `bitnami/nats`       |
-| `image.tag`            | NATS image tag (immutable tags are recommended)                                | `2.6.1-debian-10-r0` |
+| `image.tag`            | NATS image tag (immutable tags are recommended)                                | `2.6.2-debian-10-r0` |
 | `image.pullPolicy`     | Image pull policy                                                              | `IfNotPresent`       |
 | `image.pullSecrets`    | Specify docker-registry secret names as an array                               | `[]`                 |
 | `auth.enabled`         | Switch to enable/disable client authentication                                 | `true`               |
@@ -82,6 +82,8 @@ The command removes all the Kubernetes components associated with the chart and 
 | `auth.password`        | Client authentication password                                                 | `""`                 |
 | `auth.token`           | Client authentication token                                                    | `""`                 |
 | `auth.timeout`         | Client authentication timeout (seconds)                                        | `1`                  |
+| `auth.usersCredentials`| Client authentication users credentials collection                             | `[]`                 |
+| `auth.noAuthUser`      | Username from `auth.usersCredentials` to use if client credentials missing     | `""`                 |
 | `clusterAuth.enabled`  | Switch to enable/disable cluster authentication                                | `true`               |
 | `clusterAuth.user`     | Cluster authentication user                                                    | `nats_cluster`       |
 | `clusterAuth.password` | Cluster authentication password                                                | `""`                 |
@@ -193,7 +195,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `metrics.enabled`                  | Enable Prometheus metrics via exporter side-car                                                        | `false`                 |
 | `metrics.image.registry`           | Prometheus metrics exporter image registry                                                             | `docker.io`             |
 | `metrics.image.repository`         | Prometheus metrics exporter image repository                                                           | `bitnami/nats-exporter` |
-| `metrics.image.tag`                | Prometheus metrics exporter image tag (immutable tags are recommended)                                 | `0.8.0-debian-10-r85`   |
+| `metrics.image.tag`                | Prometheus metrics exporter image tag (immutable tags are recommended)                                 | `0.8.0-debian-10-r103`  |
 | `metrics.image.pullPolicy`         | Prometheus metrics image pull policy                                                                   | `IfNotPresent`          |
 | `metrics.image.pullSecrets`        | Prometheus metrics image pull secrets                                                                  | `[]`                    |
 | `metrics.resources`                | Metrics exporter resource requests and limits                                                          | `{}`                    |
